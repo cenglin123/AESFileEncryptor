@@ -4,9 +4,11 @@ AES File/Folder Encryptor A Python-based tool for encrypting and decrypting file
 ## AES File/Folder Encryptor
 
 ## Introduction
+
 AES File/Folder Encryptor is a Python-based tool designed to secure sensitive data through AES-256 encryption. It allows users to encrypt and decrypt files or folders using a static key or a password-derived key for enhanced flexibility and security.
 
 ## Key Features
+
 - **File Encryption/Decryption**: Encrypt files into `.encrypted` format and restore them when needed.
 - **Folder Encryption/Decryption**: Encrypt entire folders into a `.encrypted` file and restore folder contents.
 - **Custom Password Support**: Use a custom password to generate a secure encryption key.
@@ -19,39 +21,73 @@ AES File/Folder Encryptor is a Python-based tool designed to secure sensitive da
   pip install -r requirements.txt
   ```
 
+## Installation
+### Build the Package
+Run the following commands to generate the package:
+```bash
+python setup.py sdist bdist_wheel
+```
+
+### Install the Package
+Install the generated `.whl` file:
+```bash
+pip install dist/AESFileEncryptor-1.0.0-py3-none-any.whl --force-reinstall
+```
+
+### Verify Installation
+Check if the installation is successful:
+```bash
+aes-enc --help
+```bash
+  pip install -r requirements.txt
+  ```
+
 ## How to Use
 
 ### Command-Line Examples
+
 #### Encrypt a File
+
 ```bash
 aes-enc /path/to/file.txt
 ```
+
 Encrypts `file.txt` to `file.txt.encrypted`.
 
 #### Decrypt a File
+
 ```bash
 aes-enc /path/to/file.txt.encrypted
 ```
+
 Decrypts `file.txt.encrypted` back to `file.txt`.
 
 #### Encrypt a Folder
+
 ```bash
 aes-enc /path/to/folder
 ```
+
 Compresses and encrypts the folder into `folder.encrypted`.
 
 #### Use a Custom Password
+
 ```bash
 aes-enc -p "MySecurePassword" /path/to/file.txt
 ```
+
 Generates an encryption key based on the provided password.
 
 ### Drag-and-Drop Functionality
+
 This tool supports drag-and-drop functionality when packaged as an executable file. Simply drag files or folders onto the `.exe` file, and the tool will automatically determine whether to encrypt or decrypt the input:
 
 - Files with `.encrypted` extensions will be decrypted.
 - Other files and folders will be encrypted.
 
 ## License
+
 This project is licensed under the MIT License.
+
+
 
